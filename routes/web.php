@@ -11,6 +11,10 @@ Route::get('/terms-of-use', function () {
     return Inertia::render('TermsOfUse');
 })->name('terms-of-use');
 
+Route::get('/contact', function () {
+    return Inertia::render('contact');
+})->name('contact');
+
 Route::get('/accessibility', function () {
     return Inertia::render('Accessibility');
 })->name('accessibility');
