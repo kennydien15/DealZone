@@ -2,6 +2,7 @@ import { Link } from '@inertiajs/react';
 
 export function AppFooter() {
     return (
+
         <footer className="bg-black text-gray-300 py-8">
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
                 <div className="flex flex-col text-center md:text-left space-y-2">
