@@ -12,31 +12,11 @@ import { cn } from '@/lib/utils';
 import { type BreadcrumbItem, type NavItem, type SharedData } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-react';
-import AppLogo from './app-logo';
-import AppLogoIcon from './app-logo-icon';
 
-const mainNavItems: NavItem[] = [
-    {
-        title: 'Dashboard',
-        href: '/dashboard',
-        icon: LayoutGrid,
-    },
-];
 
-const rightNavItems: NavItem[] = [
-    {
-        title: 'Repository',
-        href: 'https://github.com/laravel/react-starter-kit',
-        icon: Folder,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits',
-        icon: BookOpen,
-    },
-];
 
-const activeItemStyles = 'text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100';
+
+
 
 interface AppHeaderProps {
     breadcrumbs?: BreadcrumbItem[];
@@ -48,148 +28,93 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
     const getInitials = useInitials();
     return (
         <>
-                    <header className="bg-zinc-800" style={{paddingLeft:'300px',paddingRight:'300px'}}>
-                <div className='flex' style={{padding: '1rem 2rem' }}>
+            <header className="bg-zinc-800" style={{ paddingLeft: '300px', paddingRight: '300px' }}>
+                <div className='flex' style={{ padding: '1rem 2rem' }}>
 
-                <div style={{}}>
-                    <img src="https://png.pngtree.com/png-vector/20230209/ourmid/pngtree-letter-z-logo-png-image_6590691.png" style={{width:'80px'}} alt="logo" />
-                
-                </div>
-                <div style={{ color: 'white',justifyContent:'space-between',display:'flex',alignItems:'center',width:'100%',paddingLeft:'80px',paddingRight:'80px' }} >
-                    <Link rel="stylesheet" href="#" >Home</Link>
-                    <Link rel="stylesheet" href="#" >Buy</Link>
-                    <Link rel="stylesheet" href="#" >Sell</Link>
-                    <Link rel="stylesheet" href="#" >Blog</Link>               
-                    <Link rel="stylesheet" href="#" >Contact</Link>
-                </div>
-                <div className='flex' style={{alignItems:'center'}}>
-                    <img src="https://img.icons8.com/m_rounded/512/FFFFFF/appointment-reminders.png"style={{width:'50px'}} alt="bell" />
-                    <img src="https://cdn-icons-png.freepik.com/512/8742/8742495.png"  style={{width:'50px'}} alt="" />
-                </div>
-                </div>
-            </header>
-            <div className="border-sidebar-border/80 border-b">
-                <div className="mx-auto flex h-16 items-center px-4 md:max-w-7xl">
-                    {/* Mobile Menu */}
-                    <div className="lg:hidden">
-                        <Sheet>
-                            <SheetTrigger asChild>
-                                <Button variant="ghost" size="icon" className="mr-2 h-[34px] w-[34px]">
-                                    <Menu className="h-5 w-5" />
-                                </Button>
-                            </SheetTrigger>
-                            <SheetContent side="left" className="bg-sidebar flex h-full w-64 flex-col items-stretch justify-between">
-                                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                                <SheetHeader className="flex justify-start text-left">
-                                    <AppLogoIcon className="h-6 w-6 fill-current text-black dark:text-white" />
-                                </SheetHeader>
-                                <div className="flex h-full flex-1 flex-col space-y-4 p-4">
-                                    <div className="flex h-full flex-col justify-between text-sm">
-                                        <div className="flex flex-col space-y-4">
-                                            {mainNavItems.map((item) => (
-                                                <Link key={item.title} href={item.href} className="flex items-center space-x-2 font-medium">
-                                                    {item.icon && <Icon iconNode={item.icon} className="h-5 w-5" />}
-                                                    <span>{item.title}</span>
-                                                </Link>
-                                            ))}
-                                        </div>
+                    <div style={{}}>
+                        <img src="https://cdn.discordapp.com/attachments/1351580729447944202/1352365219053306037/image-removebg-preview.png?ex=67de6881&is=67dd1701&hm=11ccfd9b494043ea6d5f1e755d2d50f5356bd1c699c80728205525f06f8fcd70&" style={{ width: '80px' }} alt="logo" />
 
-                                        <div className="flex flex-col space-y-4">
-                                            {rightNavItems.map((item) => (
-                                                <a
-                                                    key={item.title}
-                                                    href={item.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex items-center space-x-2 font-medium"
-                                                >
-                                                    {item.icon && <Icon iconNode={item.icon} className="h-5 w-5" />}
-                                                    <span>{item.title}</span>
-                                                </a>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </SheetContent>
-                        </Sheet>
                     </div>
-
-                    <Link href="/dashboard" prefetch className="flex items-center space-x-2">
-                        <AppLogo />
-                    </Link>
-
-                    {/* Desktop Navigation */}
-                    <div className="ml-6 hidden h-full items-center space-x-6 lg:flex">
-                        <NavigationMenu className="flex h-full items-stretch">
-                            <NavigationMenuList className="flex h-full items-stretch space-x-2">
-                                {mainNavItems.map((item, index) => (
-                                    <NavigationMenuItem key={index} className="relative flex h-full items-center">
-                                        <Link
-                                            href={item.href}
-                                            className={cn(
-                                                navigationMenuTriggerStyle(),
-                                                page.url === item.href && activeItemStyles,
-                                                'h-9 cursor-pointer px-3',
-                                            )}
-                                        >
-                                            {item.icon && <Icon iconNode={item.icon} className="mr-2 h-4 w-4" />}
-                                            {item.title}
-                                        </Link>
-                                        {page.url === item.href && (
-                                            <div className="absolute bottom-0 left-0 h-0.5 w-full translate-y-px bg-black dark:bg-white"></div>
-                                        )}
-                                    </NavigationMenuItem>
-                                ))}
-                            </NavigationMenuList>
-                        </NavigationMenu>
+                    <div style={{ color: 'white', justifyContent: 'space-between', display: 'flex', alignItems: 'center', width: '100%', paddingLeft: '80px', paddingRight: '80px' }} >
+                        <Link href="/dashboard" className='text-white hover:text-gray-300 transition'>Home</Link>
+                        <Link href="#" className='text-white hover:text-gray-300 transition'>Buy</Link>
+                        <Link href="#" className='text-white hover:text-gray-300 transition'>Sell</Link>
+                        <Link href="#" className='text-white hover:text-gray-300 transition'>Blog</Link>
+                        <Link href="#" className='text-white hover:text-gray-300 transition'>Contact</Link>
                     </div>
-
-                    <div className="ml-auto flex items-center space-x-2">
-                        <div className="relative flex items-center space-x-1">
-                            <Button variant="ghost" size="icon" className="group h-9 w-9 cursor-pointer">
-                                <Search className="!size-5 opacity-80 group-hover:opacity-100" />
-                            </Button>
-                            <div className="hidden lg:flex">
-                                {rightNavItems.map((item) => (
-                                    <TooltipProvider key={item.title} delayDuration={0}>
-                                        <Tooltip>
-                                            <TooltipTrigger>
-                                                <a
-                                                    href={item.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="group text-accent-foreground ring-offset-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring ml-1 inline-flex h-9 w-9 items-center justify-center rounded-md bg-transparent p-0 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
-                                                >
-                                                    <span className="sr-only">{item.title}</span>
-                                                    {item.icon && <Icon iconNode={item.icon} className="size-5 opacity-80 group-hover:opacity-100" />}
-                                                </a>
-                                            </TooltipTrigger>
-                                            <TooltipContent>
-                                                <p>{item.title}</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
-                                ))}
-                            </div>
-                        </div>
+                    <div className='flex' style={{ alignItems: 'center' }}>
+                        <img src="https://cdn.discordapp.com/attachments/1351580729447944202/1352365351295254578/image-removebg-preview_1.png?ex=67de68a1&is=67dd1721&hm=13ab3f268ebbb2eb88553212c03053a098b956f2174dc0a5d3ef13778a8ad831&" style={{ width: '30px' }} className="hover:cursor-pointer" alt="bell" />
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="ghost" className="size-10 rounded-full p-1">
-                                    <Avatar className="size-8 overflow-hidden rounded-full">
-                                        <AvatarImage src={auth.user.avatar} alt={auth.user.name} />
-                                        <AvatarFallback className="rounded-lg bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white">
-                                            {getInitials(auth.user.name)}
-                                        </AvatarFallback>
-                                    </Avatar>
-                                </Button>
+                                {auth.user ? (
+
+                                    <Button variant="default" className="hover:cursor-pointer ml-8">
+                                        <Avatar className="size-8 overflow-hidden rounded-full">
+                                            <AvatarImage src={auth.user.avatar} alt={auth.user.name} />
+                                            <AvatarFallback className="rounded-lg bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white">
+                                                {getInitials(auth.user.name)}
+                                            </AvatarFallback>
+                                        </Avatar>
+                                    </Button>
+                                ) : (
+                                    <>
+                                        <Link
+                                            href={route('login')}
+                                            className="hover:cursor-pointer ml-8 text-white hover:text-gray-300 transition border-white border-2 px-2 py-1 rounded-md"
+                                        >
+                                            Login
+                                        </Link>
+
+                                    </>
+                                )}
+
+
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-56" align="end">
                                 <UserMenuContent user={auth.user} />
                             </DropdownMenuContent>
                         </DropdownMenu>
+
                     </div>
                 </div>
-            </div>
+            </header>
+
+            {/* si jamais on veut une imageavec un search bar
+            
+            
+                <div
+                    className="w-full h-[400px] overflow-hidden"
+                    style={{
+                        backgroundImage: 'url(https://images.unsplash.com/photo-1547916721-7469af15e2a3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xldmVsYW5kJTIwb2hpb3xlbnwwfHwwfHx8MA%3D%3D)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                >
+                    <div>
+
+                    </div>
+                    <div className="flex justify-center items-center h-full flex-col text-center">
+                        <h1 className="text-white text-4xl font-bold mb-10  text-5xl line-height: 2.5rem drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                        Search among <span className="underline hover:underline cursor-pointer hover:text-gray-200">70 000</span> properties
+                        </h1>
+                        <div className="relative w-full max-w-md">
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                className="w-full py-3 pl-10 pr-4 text-gray-700 bg-white rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <div className="absolute left-3 top-3 text-gray-500">
+                                <Search className="w-6 h-6" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            */}
+
+            
+
+
+
             {breadcrumbs.length > 1 && (
                 <div className="border-sidebar-border/70 flex w-full border-b">
                     <div className="mx-auto flex h-12 w-full items-center justify-start px-4 text-neutral-500 md:max-w-7xl">
