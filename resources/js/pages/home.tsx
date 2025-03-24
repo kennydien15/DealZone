@@ -1,7 +1,8 @@
 //import { type SharedData } from '@/types';
-import { Head,  } from '@inertiajs/react';
+import { Head, } from '@inertiajs/react';
 import { BreadcrumbItem } from '@/types';
 import AppLayout from '@/layouts/app-layout';
+import PurchasedRecently from '@/components_Used/purshasedRecently';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -54,67 +55,50 @@ export default function Welcome() {
 
     return (
         <>
-            <Head title="Welcome">
-                <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link
-                    href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
-                    rel="stylesheet"
-                />
-            </Head>
+            <Head title="Home" />
             <AppLayout breadcrumbs={breadcrumbs}>
-                <div className=" w-full flex min-h-screen flex-col items-center ">
+                <div className="container mx-auto px-0 lg:px-30">
+                    <div className="purchasedRecentlyContainer bg-white"  >
+                        <div className="upperSection bg-white pt-3 flex flex-col items-center justify-center">
+                            <PurchasedRecently
+                                price="$200,000"
+                                address="6 plex 18903 Nottingham, Cleveland, OH, H1W 2P8V"
+                                income="$3,800/mo"
+                                cashflow="$2k/mo → $3k/mo"
+                                rehab="75K"
+                                sqft="5,580"
+                                lotSize="1,120 Sqft"
+                                yearBuilt="1958"
+                                rooms="15 rooms"
+                                heating="Forced air" 
+                                bathrooms="1 bathroom" 
+                                parking="2 Parking"
+                                bedrooms="3 bedrooms"
+                                imageUrl="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" // Replace with your image URL
+                            />
+                        </div>
+                        <div className="lowerSection">
+                            <div className="rightSection">
 
-                    <div className="w-full  p-6  ">
-                        <div className="container max-w-7xl mx-auto  p-6">
-                            <h2 className="text-3xl font-bold mb-8 text-center">Houses for Sale</h2>
-                            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                                {houses.map((house) => (
-                                    <div
-                                        key={house.id}
-                                        className="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105"
-                                    >
-                                        <img
-                                            src={house.image}
-                                            alt={house.title}
-                                            className="w-full h-48 object-cover"
-                                        />
-                                        <div className="p-4">
-                                            <h3 className="text-xl font-semibold">{house.title}</h3>
-                                            <p className="text-gray-600">{house.address}</p>
-                                            <p className="mt-2 font-bold">{house.price}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            </div>
+                            <div className="leftSection">
+
                             </div>
                         </div>
                     </div>
+                    <div className="announcementContainer">
 
-                    <div className="w-full  p-6 shadow-lg ">
-                        <div className="container max-w-7xl mx-auto  p-6">
-                            <h2 className="text-3xl font-bold mb-8 text-center">Houses for Rent</h2>
-                            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                                {houses.map((house) => (
-                                    <div
-                                        key={house.id}
-                                        className="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105"
-                                    >
-                                        <img
-                                            src={house.image}
-                                            alt={house.title}
-                                            className="w-full h-48 object-cover"
-                                        />
-                                        <div className="p-4">
-                                            <h3 className="text-xl font-semibold">{house.title}</h3>
-                                            <p className="text-gray-600">{house.address}</p>
-                                            <p className="mt-2 font-bold">{house.price}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                    </div>
+                    <div className="articlesContainer">
+
+                    </div>
+                    <div className="latestArticleContainer">
+
                     </div>
 
+                    <div className="sponsorsContainer">
 
+                    </div>
                 </div>
             </AppLayout>
         </>
