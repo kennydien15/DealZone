@@ -46,11 +46,24 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                             fontSize: "15px",
                             opacity: "0.8"
                         }}>
-                            <li>Home</li>
-                            <li>Buy</li>
-                            <li>Sell</li>
-                            <li>Blog</li>
-                            <li>Contact</li>
+                            <li>
+                                <Link href="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link href="/buy">Buy</Link>
+                            </li>
+                            <li>
+                                <Link href="/sell">Sell</Link>
+                            </li>
+                            <li>
+                                <Link href="/blog">Blog</Link>
+                            </li>
+                            <li>
+                                <Link href="/contact">Contact</Link>
+                            </li>
+                            <li>
+                                <Link href="/about">About Us</Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -156,6 +169,14 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                                 className="block py-3 px-4 text-lg font-medium text-gray-200 rounded-lg hover:bg-[#404440] hover:text-[#c2a45e] transition-all duration-300 ease-in-out"
                                             >
                                                 Contact
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                href="/about"
+                                                className="block py-3 px-4 text-lg font-medium text-gray-200 rounded-lg hover:bg-[#404440] hover:text-[#c2a45e] transition-all duration-300 ease-in-out"
+                                            >
+                                                About Us
                                             </Link>
                                         </li>
                                     </ul>

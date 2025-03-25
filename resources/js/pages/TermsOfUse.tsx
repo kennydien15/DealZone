@@ -22,7 +22,7 @@ export default function TermsOfUse() {
             <AppLayout breadcrumbs={breadcrumbs}>
                 <div className="w-full flex min-h-screen flex-col items-center">
                     <div className="">
-                        <div className="container max-w-7xl mx-auto  p-6">
+                        <div className="container max-w-7xl mx-auto  p-6 bg-[#f8f8f8]">
                             <h1 className="text-4xl font-bold mb-6 text-center uppercase">Terms of Use</h1>
 
                             <section className="mb-6">
