@@ -80,7 +80,7 @@ export default function About() {
                                 <h2 className="text-2xl font-bold mb-4">ABOUT</h2>
                                 <p className="mb-4">Your One-Stop Shop for Off-Market, Cash-Flowing Deals in Cleveland, Ohio and Beyond!</p>
                                 <p className="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat pellentesque urna, at pharetra lectus tincidunt sed. Vestibulum elementum elit in metus portitor luctus.</p>
-                                <a href="#" className="bg-amber-600 text-white py-2 px-6 inline-block uppercase font-bold hover:bg-amber-700 transition">Learn More</a>
+                                <a href="#" className="bg-[#b58f46] text-white py-2 px-6 inline-block uppercase font-bold hover:bg-[#9e7d3d] transition">Learn More</a>
                             </div>
                             <div className="md:w-1/2 h-64 md:h-auto bg-gray-300">
                                 <img src="https://summitmoving.com/wp-content/uploads/2024/04/house-in-ohio-scaled.jpg" alt="House" className="h-full w-full object-cover" />
@@ -92,7 +92,7 @@ export default function About() {
                             <div className="p-8 md:w-1/2">
                                 <h2 className="text-2xl font-bold mb-4">What is Deal Zone?</h2>
                                 <p className="mb-6">Deal Zone is part of how we partner with investors, high-value end users, and contractors by providing them first-look access to our deeply discounted properties. When joining a restricted market, our real estate offers no arms-length purchases, no brokers, and direct access to deal processes made seamless.</p>
-                                <a href="#" className="bg-amber-600 text-white py-2 px-6 inline-block uppercase font-bold hover:bg-amber-700 transition">Learn More</a>
+                                <a href="#" className="bg-[#b58f46] text-white py-2 px-6 inline-block uppercase font-bold hover:bg-[#9e7d3d] transition">Learn More</a>
                             </div>
                             <div className="md:w-1/2 h-64 md:h-auto bg-gray-300">
                                 <img src="https://rockfordhomes.net/wp-content/uploads/2020/04/cta-new-home-designs.png" alt="House at sunset" className="h-full w-full object-cover" />
@@ -113,7 +113,7 @@ export default function About() {
                                         <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
                                             <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                                         </div>
-                                        <h3 className="text-amber-600 font-bold mb-1 text-lg">{member.name}</h3>
+                                        <h3 className="text-[#b58f46] font-bold mb-1 text-lg">{member.name}</h3>
                                         <p className="text-gray-600 mb-2 text-sm">{member.position}</p>
                                         <p className="text-gray-600 mb-4 text-sm">{member.description}</p>
                                         <div className="flex space-x-3 text-gray-600">

@@ -47,22 +47,22 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                             opacity: "0.8"
                         }}>
                             <li>
-                                <Link href="/">Home</Link>
+                                <Link className="hover:text-gray-400" href="/">Home</Link>
                             </li>
                             <li>
-                                <Link href="/buy">Buy</Link>
+                                <Link className="hover:text-gray-400" href="/buy">Buy</Link>
                             </li>
                             <li>
-                                <Link href="/sell">Sell</Link>
+                                <Link className="hover:text-gray-400" href="/sell">Sell</Link>
                             </li>
                             <li>
-                                <Link href="/blog">Blog</Link>
+                                <Link className="hover:text-gray-400" href="/blog">Blog</Link>
                             </li>
                             <li>
-                                <Link href="/contact">Contact</Link>
+                                <Link className="hover:text-gray-400" href="/contact">Contact</Link>
                             </li>
                             <li>
-                                <Link href="/about">About Us</Link>
+                                <Link className="hover:text-gray-400" href="/about">About Us</Link>
                             </li>
                         </ul>
                     </div>

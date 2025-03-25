@@ -31,9 +31,9 @@ export default function Contact() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                             {/* Use .map() here for the contact cards */}
                             {[
-                                { icon: <FaPhoneAlt />, title: 'Phone', info: '1 (555) 555-5555' },
-                                { icon: <FaLocationDot />, title: 'Head Office', info: '11459 Mayfield Rd, STE 327, Cleveland OH 44106' },
-                                { icon: <FaEnvelope />, title: 'Email', info: 'info@jkrealestatepartners.com' }
+                                { icon: <FaPhoneAlt className="text-blue-500"  />, title: 'Phone', info: '1 (555) 555-5555' },
+                                { icon: <FaLocationDot className="text-blue-500"/>, title: 'Head Office', info: '11459 Mayfield Rd, STE 327, Cleveland OH 44106' },
+                                { icon: <FaEnvelope className="text-blue-500"/>, title: 'Email', info: 'info@jkrealestatepartners.com' }
                             ].map((card, index) => (
                                 <div key={index} className="bg-[#f8f8f8] p-6 text-center flex flex-col items-center border">
                                     <div className="text-amber-600 text-2xl mb-3">{card.icon}</div>
@@ -88,7 +88,7 @@ export default function Contact() {
                                     </div>
 
                                     <div>
-                                        <label htmlFor="phone" className="block font-bold mb-2">Phone</label>
+                                        <label htmlFor="phone" className="block font-bold mb-2 ">Phone</label>
                                         <input
                                             type="tel"
                                             id="phone"
@@ -113,7 +113,7 @@ export default function Contact() {
 
                                 <button
                                     type="submit"
-                                    className="bg-amber-600 text-white font-bold py-3 px-10 uppercase block mx-auto hover:bg-amber-700 transition"
+                                    className="bg-[#b58f46] text-white font-bold py-3 px-10 uppercase block mx-auto hover:bg-amber-700 transition"
                                 >
                                     Send
                                 </button>
