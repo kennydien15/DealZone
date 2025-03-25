@@ -85,16 +85,11 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                 display: "block"
                             }}
                         />
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
+                
+                            
                                 {auth.user ? (
                                     <Button variant="default" className="hover:cursor-pointer ml-8">
-                                        <Avatar className="size-8 overflow-hidden rounded-full">
-                                            <AvatarImage src={auth.user.avatar} alt={auth.user.name} />
-                                            <AvatarFallback className="rounded-lg bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white">
-                                                {getInitials(auth.user.name)}
-                                            </AvatarFallback>
-                                        </Avatar>
+  
                                     </Button>
                                 ) : (
                                     <Link
@@ -105,11 +100,8 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                         LOG IN
                                     </Link>
                                 )}
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56" align="end">
-                                <UserMenuContent user={auth.user} />
-                            </DropdownMenuContent>
-                        </DropdownMenu>
+
+                   
                     </div>
                     <div className="md:hidden">
                         <Sheet>
